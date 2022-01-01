@@ -1,5 +1,7 @@
 # Setup-New-User-and-SSH-Key-Auth
 
+```
+
 [root@ip-172-31-2-114 useradd]# cat user.var
 ---
 user: betcybabu12345
@@ -26,3 +28,4 @@ publickey: "mykey.pub"
 
 
 [root@ip-172-31-2-114 useradd]#
+```
