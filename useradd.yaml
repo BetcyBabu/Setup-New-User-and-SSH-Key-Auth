@@ -1,0 +1,16 @@
+---
+- name: "Setup New User and SSH Key Auth"
+  hosts: amazon
+  become: true
+  vars_files:
+    - user.var
+  tasks:
+    - name: "Adding new user"
+      user:
+        name: "{{ user }}"
+        create_home: true
+
+    - name: "Adding SSH authorized key for the user account"
+      authorized_key:
+        user: "{{ user }}"
+        key: "{{ lookup('file', '{{ publickey }}') }}"
